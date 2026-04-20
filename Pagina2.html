@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información - MAPLE</title>
+    <script src="https://polyfill.io"></script>
+    <script id="MathJax-script" async src="https://jsdelivr.net"></script>
+    
+    <style>
+        /* FONDO: Colores del Mundial con alta visibilidad y estilo tecnológico */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #050505;
+            /* Gradientes saturados para que el VERDE, AZUL y ROJO se noten de verdad */
+            background-image: 
+                radial-gradient(at 10% 20%, rgba(0, 104, 71, 0.8) 0px, transparent 40%), /* VERDE MÉXICO */
+                radial-gradient(at 90% 20%, rgba(0, 51, 160, 0.8) 0px, transparent 40%), /* AZUL USA */
+                radial-gradient(at 50% 90%, rgba(239, 51, 64, 0.7) 0px, transparent 50%), /* ROJO CANADÁ */
+                linear-gradient(180deg, #000 0%, #111 100%);
+            background-attachment: fixed;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* PANEL: Transparencia moderna "Glassmorphism" con borde tecnológico */
+        .caja-info {
+            max-width: 600px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.65); /* Fondo oscuro pero transparente */
+            border-radius: 20px;
+            backdrop-filter: blur(15px) saturate(150%); 
+            -webkit-backdrop-filter: blur(15px) saturate(150%);
+            /* Borde neón que combina los 3 colores */
+            border: 2px solid;
+            border-image: linear-gradient(to right, #006847, #ef3340, #0033a0) 1;
+            line-height: 1.6;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
+            position: relative;
+            margin: 20px 0;
+        }
+
+        h1, h2 {
+            color: #ffcc00;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 1.7rem;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #ef3340;
+            padding-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 20px;
+        }
+
+        .formula {
+            font-size: 1.3rem;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            color: #ffcc00; 
+            text-align: center;
+            border-left: 4px solid #006847;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+        }
+
+        ul {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 15px 15px 15px 35px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        li::before {
+            content: "◢"; 
+            color: #ef3340;
+            font-size: 0.8rem;
+            display: inline-block; 
+            width: 1.5em;
+            margin-left: -1.2em;
+        }
+
+        .boton-volver {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 40px;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            border: 2px solid #00ffcc;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+        }
+
+        .boton-volver:hover {
+            background: #00ffcc;
+            color: black;
+            box-shadow: 0 0 30px rgba(0, 255, 204, 0.6);
+            transform: scale(1.05);
+        }
+
+        strong {
+            color: #ef3340;
+        }
+    </style>
+</head>
+<body>
+    <div class="caja-info">
+        <h1>HASTA EL FINAL</h1>
+        <p>Ahora imagina lo contrario: un equipo que lo juega TODO ⚽</p>
+        <p>¿Cuál es la mayor cantidad de partidos que puede disputar antes de llegar al final?</p>
+        <p>Como ya lo vimos en el ejercicio anterior, sabemos que como mínimo un equipo juega 3 partidos en la fase de grupos, ahora si el equipo logra avanzar, entra a las fases eliminatorias, donde cada victoria le permite jugar un partido más.</p>
+        <p>Para calcular el número máximo de partidos, se aplica el principio de suma, ya que se van acumulando los partidos de cada fase del torneo.</p>
+        
+        <p>¿Qué es el principio de suma?</p>
+        <p>El principio de suma establece que:</p>
+        <p>Si una actividad se realiza en varias etapas diferentes, el total se obtiene sumando los resultados de cada etapa.</p>
+        
+        <p>En este caso:</p>
+        <ul>
+            <li>Cada fase del torneo aporta partidos</li>
+            <li>Por eso, se suman todos los partidos jugados en cada fase</li>
+        </ul>
+
+        <p>¿Por qué se aplica el principio de suma en este caso?</p>
+        <p>Se puede aplicar el principio de suma porque el torneo está dividido en fases distintas, y en cada una se juegan partidos que se van acumulando.</p>
+
+        <p>Fases del torneo</p> 
+        <ul>
+            <li>Fase de grupos 'n3 partidos</li>
+            <li>Dieciseisavos de final 'n1 partido</li>
+            <li>Octavos de final 'n 1 partido</li>
+            <li>Cuartos de final 'n 1 partido</li>
+            <li>Semifinal 'n 1 partido</li>
+            <li>Final 'n 1 partido</li>
+        </ul>
+
+        <div class="formula">
+            3+1+1+1+1+1=8
+        </div>
+
+        <p>Si un equipo gana todos sus partidos y llega hasta la final: Puede jugar un máximo de 8 partidos en todo el torneo</p>
+        <div style="text-align: center;">
+            <a href="P.html" class="boton-volver">VOLVER</a>
+        </div>
+    </div>
+</body>
+</html>

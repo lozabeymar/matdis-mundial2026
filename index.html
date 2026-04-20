@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea Mundial</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url("foto1.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;}
+        .capa-filtro {
+            background: rgba(0, 0, 0, 0.5); 
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;}
+        h1 { 
+            color: white; 
+            margin-bottom: 40px; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+            font-size: clamp(2rem, 6vw, 3rem);
+            text-transform: uppercase;}
+        .contenedor-galerias {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;}
+        .galeria-item {
+            text-align: center;
+            transition: transform 0.3s;
+            text-decoration: none;}
+        .galeria-item:hover { transform: scale(1.1); }
+        .galeria-item img {
+             width: min(250px, 80vw);
+             height: auto;
+             aspect-ratio: 5/7;
+             object-fit: cover;
+             border-radius:15px;
+             border:4px solid white;
+             box-shadow:0 10px 20px rgba(0,0,0,0.3)
+            ;}
+        .galeria-item p { 
+            color: white; 
+            font-weight: bold; 
+            margin-top: 15px; 
+            font-size: 1.5rem; 
+            text-shadow: 1px 1px 5px black;}
+        .especial{
+            color: white;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px){
+
+        .contenedor-galerias{
+            flex-direction: column;
+            align-items:center;
+            gap:30px;
+        }
+
+        .galeria-item p{
+            font-size:1.2rem;
+        }
+
+        h1{
+            margin-bottom:25px;
+        }
+
+}
+    </style>
+</head>
+<body>
+    <div class="capa-filtro">
+        <h1>Más que fútbol: la matemática detrás del Mundial 2026 ⚽</h1>
+        <p class="especial">¿Alguna vez te preguntaste cuántos partidos se juegan en un Mundial? ⚽
+        <br>
+        Atrévete a analizar, calcular y descubrir por ti mismo cómo la matemática explica el torneo más grande del mundo.</p>
+        <div class="contenedor-galerias">
+            <a href="pagina1.html" class="galeria-item">
+                <img src="foto2.jpg" alt="Sección 1">
+                <p>MAPLE</p>
+                </a>
+            <a href="pagina2.html" class="galeria-item">
+                <img src= "foto3.jpg" alt="Sección 2">
+                <p>ZAYU</p>
+            </a> 
+            <a href="pagina3.html" class="galeria-item">
+                <img src="foto4.jpg" alt="Sección3">
+                <p>CLUTCH</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información - MAPLE</title>
+    <script src="https://polyfill.io"></script>
+    <script id="MathJax-script" async src="https://jsdelivr.net"></script>
+    
+    <style>
+        /* FONDO: Colores del Mundial con alta visibilidad y estilo tecnológico */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #050505;
+            /* Gradientes saturados: VERDE, AZUL y ROJO potentes */
+            background-image: 
+                radial-gradient(at 10% 20%, rgba(0, 104, 71, 0.8) 0px, transparent 40%), /* VERDE */
+                radial-gradient(at 90% 20%, rgba(0, 51, 160, 0.8) 0px, transparent 40%), /* AZUL */
+                radial-gradient(at 50% 90%, rgba(239, 51, 64, 0.7) 0px, transparent 50%), /* ROJO */
+                linear-gradient(180deg, #000 0%, #111 100%);
+            background-attachment: fixed;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* PANEL: Transparencia moderna "Glassmorphism" con borde tecnológico */
+        .caja-info {
+            max-width: 600px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.65); 
+            border-radius: 20px;
+            backdrop-filter: blur(15px) saturate(150%); 
+            -webkit-backdrop-filter: blur(15px) saturate(150%);
+            /* Borde neón tricolor */
+            border: 2px solid;
+            border-image: linear-gradient(to right, #006847, #ef3340, #0033a0) 1;
+            line-height: 1.6;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
+            position: relative;
+        }
+
+        h1, h3 {
+            color: #ffcc00;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 1.7rem;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #ef3340;
+            padding-bottom: 8px;
+        }
+
+        .formula {
+            font-size: 1.3rem;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            color: #ffcc00; 
+            text-align: center;
+            border-left: 4px solid #006847;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+        }
+
+        ul {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 15px 15px 15px 35px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        li::before {
+            content: "◢"; 
+            color: #ef3340;
+            font-size: 0.8rem;
+            display: inline-block; 
+            width: 1.5em;
+            margin-left: -1.2em;
+        }
+
+        .boton-volver {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 40px;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            border: 2px solid #00ffcc;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+        }
+
+        .boton-volver:hover {
+            background: #00ffcc;
+            color: black;
+            box-shadow: 0 0 30px rgba(0, 255, 204, 0.6);
+            transform: scale(1.05);
+        }
+
+        strong {
+            color: #ef3340;
+        }
+    </style>
+</head>
+<body>
+    <div class="caja-info">
+        <h1>¿OTRA OPCION?</h1>
+        <p>Veamos una manera diferente de realizar el mundial pero que tenga menos partidos. Para ello planteamos lo siguiente:</p>
+        
+        <ul>
+            <li>16 grupos de 3 equipos</li>
+            <li>Solo el mejor de cada grupo clasifica</li>
+        </ul>
+
+        <p>Cada grupo de 3 equipos genera:</p>
+        <div class="formula">
+            <p>C(3, 2) = 3 partidos</p>
+        </div>
+
+        <p>Ahora aplicamos el principio de multiplicación para los 16 grupos formados:</p>
+        <div class="formula">
+            <p>3 x 16 = 48 partidos</p>
+        </div>
+
+        <p><strong>¿Por qué usamos combinaciones?</strong><br>
+        Porque contamos enfrentamientos únicos entre equipos.</p>
+
+        <h3>⚽ Fase eliminatoria</h3>
+        <p>Clasifican 16 equipos:</p>
+        <ul>
+            <li>Octavos 'n 8 partidos</li>
+            <li>Cuartos 'n 4 partidos</li>
+            <li>Semifinal 'n 2 partidos</li>
+            <li>Final 'n 1 partido</li>
+            <li>Tercer lugar 'n 1 partido</li>
+        </ul>
+
+        <div class="formula">
+            <p>8 + 4 + 2 + 1 + 1 = 16</p>
+        </div>
+
+        <p>¿Por qué sumamos?</p>
+        <p>Porque cada fase añade partidos distintos. Ahora aplicamos de nuevo el principio de suma para ver el total de partidos:</p>
+        
+        <div class="formula">
+            <p>48 + 16 = 64</p>
+        </div>
+
+        <p><strong>Total 64 partidos</strong></p>
+        Estos cálculos muestran que, aplicando las matemáticas:
+        <ul>
+            <li>Podemos analizar torneos</li>
+            <li>Podemos optimizar la cantidad de partidos</li>
+            <li>Entender mejor cómo se organizan las competiciones</li>
+        </ul>
+        
+        <div style="text-align: center;">
+            <a href="P.html" class="boton-volver">VOLVER</a>
+        </div>
+    </div>
+</body>
+</html>
+
